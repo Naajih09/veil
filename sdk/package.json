@@ -115,6 +115,7 @@
     "dist",
     "src"
   ],
+  "sideEffects": false,
   "scripts": {
     "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc && tsc -p tsconfig.esm.json && node scripts/flatten-dist.js",
     "test": "jest",
@@ -268,6 +269,18 @@
       "name": "vanilla",
       "path": "dist/vanilla.js",
       "limit": "225 KB"
+    },
+    {
+      "name": "single function (ESM)",
+      "path": "dist/esm/index.js",
+      "import": "{ REPLACE_WITH_REAL_EXPORT_NAME }",
+      "limit": "REPLACE_AFTER_MEASURING KB"
+    },
+    {
+      "name": "vanilla single function (ESM)",
+      "path": "dist/esm/vanilla.js",
+      "import": "{ REPLACE_WITH_REAL_EXPORT_NAME }",
+      "limit": "REPLACE_AFTER_MEASURING KB"
     }
   ],
   "tsd": {
